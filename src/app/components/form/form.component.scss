@@ -1,0 +1,35 @@
+@import '../../sass/base.scss';
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-wrapper {
+    width: 50%;
+
+    .form-group {
+      margin: 0 auto;
+
+      &>label {
+        display: block;
+        float: left;
+        margin-top: 20px;
+      }
+
+      .message-area {
+        height: 100px;
+      }
+
+      .btn {
+        margin-top: 30px;
+        background-color: $theme-primary;
+
+        &:hover {
+          background-color: $theme-primary-hover;
+        }
+      }
+    }
+  }
+}

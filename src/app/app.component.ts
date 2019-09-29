@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Angulartics2Clicky } from 'angulartics2/clicky';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'megabloq-landing-page';
+
+  constructor(angulartics2Clicky: Angulartics2Clicky) {
+    angulartics2Clicky.startTracking();
+  }
 }

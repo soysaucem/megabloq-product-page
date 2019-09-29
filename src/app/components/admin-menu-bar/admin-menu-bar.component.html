@@ -1,0 +1,49 @@
+<div class="menu-container">
+
+  <div class="menu-header">
+    <h2>BrickAdmin</h2>
+
+    <button class="navbar-button navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <fa-icon [icon]="['fas', 'bars']" [styles]="{'width': '20px'}"></fa-icon>
+    </button>
+  </div>
+
+  <hr>
+
+  <!-- Normal menu -->
+  <ul class="menu-list">
+
+    <li class="menu-item" (click)="option.emit('form-data'); active = 'form-data';"
+      [ngClass]="{'active': active === 'form-data'}">
+      <a href="javascript:void(0)"><fa-icon [icon]="['fas', 'table']"></fa-icon> Form Data</a>
+    </li>
+
+    <li class="menu-item" (click)="option.emit('click-tracking'); active = 'click-tracking';"
+      [ngClass]="{'active': active === 'click-tracking'}">
+      <a href="javascript:void(0)"><fa-icon [icon]="['fas', 'chart-line']"></fa-icon> Web Analytics</a>
+    </li>
+
+  </ul>
+
+  <!-- Menu can be toggled collapse -->
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+
+    <ul class="collapse-menu-list navbar-nav ml-auto">
+
+      <li class="menu-item nav-item" (click)="option.emit('form-data'); active = 'form-data';"
+        [ngClass]="{'active': active === 'form-data' ? true : false}">
+        <fa-icon [icon]="['fas', 'table']"></fa-icon><a href="javascript:void(0)">Form Data</a>
+      </li>
+
+      <li class="menu-item nav-item" (click)="option.emit('click-tracking'); active = 'click-tracking';"
+        [ngClass]="{'active': active === 'click-tracking' ? true : false}">
+        <fa-icon [icon]="['fas', 'chart-line']"></fa-icon><a href="javascript:void(0)">Web Analytics</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>

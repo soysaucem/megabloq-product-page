@@ -1,0 +1,25 @@
+<ng-container *ngIf="form$ | async as form">
+
+  <div class="form-modal">
+
+    <div class="form-wrapper rounded">
+
+      <div class="form-modal-header">
+        <h3>Form: {{form.id}}</h3>
+        <button type="button" class="close" (click)="destroy.emit('')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      
+      <div class="form-data">
+        <p class="form-item"><span class="item-title">First Name:</span> {{form.firstName}}</p>
+        <p class="form-item"><span class="item-title">Last Name:</span> {{form.lastName}}</p>
+        <p class="form-item"><span class="item-title">Email:</span> {{form.email}}</p>
+        <p class="form-item"><span class="item-title">Message:</span> {{form.message}}</p>
+      </div>
+
+    </div>
+  
+  </div>
+
+</ng-container>

@@ -1,0 +1,46 @@
+<!-- Normal page -->
+<div class="row custom-row">
+
+  <div class="menu-column">
+    <app-admin-menu-bar (option)="selectOption($event)"></app-admin-menu-bar>
+  </div>
+
+  <ng-container [ngSwitch]="option">
+
+    <div class="content-column">
+      <app-form-data *ngSwitchCase="'form-data'" (selectedForm)="selectForm($event)"></app-form-data>
+      <app-click-tracking *ngSwitchCase="'click-tracking'"></app-click-tracking>
+    </div>
+
+  </ng-container>
+
+</div>
+
+<!-- Responsive page when windows width < 992px -->
+<div class="responsive-container">
+
+  <div class="row">
+    <app-admin-menu-bar (option)="selectOption($event)"></app-admin-menu-bar>
+  </div>
+
+  <div class="row">
+    <ng-container [ngSwitch]="option">
+
+      <app-form-data *ngSwitchCase="'form-data'" (selectedForm)="selectForm($event)"></app-form-data>
+      <app-click-tracking *ngSwitchCase="'click-tracking'"></app-click-tracking>
+
+    </ng-container>
+  </div>
+
+</div>
+
+<!-- Form detail modal -->
+<div [@openClose]="isOpen">
+
+  <ng-container *ngIf="selectedForm">
+
+    <app-form-data-detail (destroy)="destroyFormDetail($event);" [id]="selectedForm"></app-form-data-detail>
+
+  </ng-container>
+
+</div>

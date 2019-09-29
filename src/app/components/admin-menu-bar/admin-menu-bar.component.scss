@@ -1,0 +1,113 @@
+@import '../../sass/base.scss';
+
+.menu-container {
+  background-color: $theme-primary;
+  height: 100%;
+  width: 100%;
+  float: left;
+
+  $common-margin: 20px;
+  $common-font: "Lato", "Helvetica", "Arial", "sans-serif";
+
+  .menu-header {
+    &>h2 {
+      margin-top: $common-margin;
+      font-family: $common-font;
+      text-align: center;
+    }
+
+    .navbar-button {
+      display: none;
+    }
+  }
+
+  hr {
+    border-color: $gray-light;
+  }
+
+  .menu-list,
+  .collapse-menu-list {
+    display: block;
+    margin: 50px 0 0 0;
+    width: 100%;
+    padding: 0;
+
+    .menu-item {
+      display: block;
+      margin-left: 0;
+      padding: 10px 0 10px 20px;
+      font-size: 20px;
+
+      &:hover {
+        background-color: $theme-primary-hover;
+        transition: background-color 1s ease-out;
+      }
+
+      &>a {
+        margin-left: 3px;
+        text-decoration: none;
+        color: rgb(24, 23, 23);
+        font-family: $common-font;     
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+
+    .active {
+      background-color: $theme-primary-hover;
+    }
+  }
+
+  .collapse-menu-list {
+    @media (min-width: 992px) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .menu-container {
+    position: fixed;
+    height: 80px;
+    top: 0;
+    z-index: 1000;
+
+    &>hr {
+      display: none;
+    }
+
+    .menu-header {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &>h2 {
+        text-align: left;
+        margin: 15px 0 15px 20px;
+      }
+
+      .navbar-button {
+        display: block;
+        margin-right: 10px;
+      }
+    }
+
+    .menu-list {
+      display: none;
+    }
+
+    .collapse-menu-list {
+      margin: 0;
+      background-color: $theme-primary;
+
+      .menu-item {
+        font-size: 15px;
+      }
+    }
+
+  }
+}

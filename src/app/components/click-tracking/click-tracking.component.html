@@ -1,0 +1,11 @@
+<ng-container *ngIf="purchaseEventData">
+  <h2>Analytics of BrickBundle Landing Page In Last 7 Days</h2>
+  <div class="chart-container">
+    <div class="chart-wrapper" style="display: block">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+
+</ng-container>

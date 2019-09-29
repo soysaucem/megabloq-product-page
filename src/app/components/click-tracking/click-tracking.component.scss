@@ -1,0 +1,16 @@
+@import '../../sass/base.scss';
+
+h2 {
+  text-align: center;
+}
+
+.chart-container {
+  width: 100%;
+
+  .chart-wrapper {
+    position: relative;
+    width: 90%;
+    height: 70%;
+    margin: 100px auto;
+  }
+}

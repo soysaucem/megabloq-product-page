@@ -1,0 +1,53 @@
+<form class="form-container" [formGroup]="getStartedForm">
+
+  <div class="form-wrapper">
+    <div class="form-row">
+
+      <div class="form-group col-md-6">
+        <label for="firstName">First Name *</label>
+        <input #firstName class="form-control" id="firstName" type="text" formControlName="firstName"
+          [ngClass]="{'is-invalid': (getStartedForm.get('firstName').touched && getStartedForm.get('firstName').invalid) || (getStartedForm.get('firstName').invalid && submitted)}"
+          required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please provide your first name.
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="lastName">Last Name *</label>
+        <input #lastName class="form-control" id="lastName" type="text" formControlName="lastName"
+          [ngClass]="{'is-invalid': (getStartedForm.get('lastName').touched && getStartedForm.get('lastName').invalid) || (getStartedForm.get('lastName').invalid && submitted)}"
+          required>
+        <div class="invalid-feedback">
+          Please provide your last name.
+        </div>
+      </div>
+
+
+    </div>
+    <div class="form-group">
+      <label for="email">Email *</label>
+      <input #email class="form-control" id="email" type="email" formControlName="email"
+        [ngClass]="{'is-invalid': (getStartedForm.get('email').touched && getStartedForm.get('email').invalid) || (getStartedForm.get('email').invalid && submitted)}"
+        required>
+      <div *ngIf="(getStartedForm.get('email').touched && getStartedForm.get('email').invalid) || (getStartedForm.get('email').invalid && submitted)" class="invalid-feedback">
+        <div *ngIf="!!getStartedForm.get('email').errors.required">Please provide your email.</div>
+        <div *ngIf="!!getStartedForm.get('email').errors.email">Please provide a valid email.</div>
+      </div>
+
+      <label for="message">Message (Optional)</label>
+      <textarea #message class="message-area form-control" id="message" type="text"
+        formControlName="message"></textarea>
+
+      <button type="submit" class="btn btn-default"
+        angulartics2On="click" angularticsAction="submit-button" [angularticsProperties]="{title: 'Submit Button Clicked'}"
+        (click)="createForm({id: null, firstName: firstName.value, lastName: lastName.value, email: email.value, message: message.value, createdAt: null})">Submit</button>
+    
+    </div>
+
+  </div>
+
+</form>

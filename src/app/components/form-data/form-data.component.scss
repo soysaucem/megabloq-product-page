@@ -1,0 +1,138 @@
+@import '../../sass/base.scss';
+
+.table-responsive {
+  .table {
+    .thead-dark {
+
+      .id-column {
+        width: 33%;
+      }
+
+      .email-column {
+        width: 33%;
+      }
+
+      .date-column {
+        width: 33%;
+      }
+    }
+
+    &>tbody {
+
+      .form-data-row {
+
+        .column-id-item {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+ngb-pagination {
+  :host &::ng-deep {
+    .pagination {
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .page-item {
+
+        .page-link {
+          color: $theme-primary;
+
+          &:focus {
+            box-shadow: none;
+          }
+        }
+      }
+
+      .active {
+        
+        .page-link {
+          background-color: $theme-primary;
+          border-color: $theme-primary;
+          color: #fff;
+        }
+      }
+
+      .disabled {
+
+        .page-link {
+          color: #6c757d;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+
+  table,
+  thead,
+  tbody,
+  tr,
+  td {
+    display: block;
+  }
+
+  tr {
+    border: 1px solid #dee2e6;
+  }
+
+  th,
+  td {
+    border: none;
+  }
+
+  .table-responsive {
+    margin: 10px auto 0 auto;
+    width: 90%;
+
+    .table {
+
+      .thead-dark {
+        display: none;
+      }
+
+      &>tbody {
+
+        .form-data-row {
+
+          .column-id-item {
+            width: 100%;
+            font-weight: 400;
+
+            &::before {
+              content: 'Form ID: ';
+              display: inline-block;
+              width: 40%;
+              font-weight: bold;
+            }
+          }
+
+          .column-email-item {
+            width: 100%;
+
+            &::before {
+              content: 'Sent From: ';
+              display: inline-block;
+              width: 40%;
+              font-weight: bold;
+            }
+          }
+
+          .column-date-item {
+            width: 100%;
+
+            &::before {
+              content: 'Created At: ';
+              display: inline-block;
+              width: 40%;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}

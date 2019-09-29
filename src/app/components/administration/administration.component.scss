@@ -1,0 +1,45 @@
+@import '../../sass/base.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.custom-row {
+  height: 100vh;
+
+  .menu-column {
+    max-width: auto;
+    width: 18%;
+  }
+
+  .content-column {
+    display: flex;
+    max-width: auto;
+    width: 82%;
+
+    app-form-data, app-click-tracking {
+      margin: 50px auto;
+      width: 80%;
+    }
+  }
+}
+
+.responsive-container {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .custom-row {
+    display: none;
+  }
+
+  .responsive-container {
+    display: block;
+
+    app-form-data, app-click-tracking {
+      margin: 100px auto;
+      width: 100%;
+    }
+  }
+}
