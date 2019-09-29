@@ -12,6 +12,12 @@ Install `php7.0+`.
 
 Run `php -S 127.0.0.1:8080 -t ./src/app/backend` in the root project folder to serve the backend server.
 
+## Database
+
+Install `MySQL`.
+
+In MySQL CLI, run `./src/app/database/import.sql` file to create database schema.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
